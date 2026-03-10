@@ -1,0 +1,31 @@
+{
+  "name": "wordpress-to-postgresql-migration",
+  "version": "1.0.0",
+  "description": "Direct WordPress to PostgreSQL migration - migrates wp_users and wp_usermeta to AWS PostgreSQL (no Prisma)",
+  "main": "migrate-direct.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "setup": "ts-node create-tables.ts",
+    "migrate": "ts-node migrate-enhanced.ts",
+    "migrate:direct": "ts-node migrate-direct.ts",
+    "migrate:build": "tsc migrate-enhanced.ts && node migrate-enhanced.js",
+    "fetch": "node fetch_user.js",
+    "migrate:slugs": "ts-node final/products/migrate-slugs.ts",
+    "migrate:slugs:preview": "ts-node final/products/migrate-slugs.ts --preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@types/pg": "^8.16.0",
+    "dotenv": "^17.2.3",
+    "mysql2": "^3.16.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
