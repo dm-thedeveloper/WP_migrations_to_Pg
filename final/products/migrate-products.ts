@@ -721,18 +721,18 @@ class ProductMigration {
 }
 
 // Run migration
-if (require.main === module) {
-  const migration = new ProductMigration();
-  migration
-    .run()
-    .then(() => {
-      console.log("🎉 Product migration completed!");
-      process.exit(0);
-    })
-    .catch((error) => {
-      console.error("💥 Migration failed:", error);
-      process.exit(1);
-    });
-}
+// if (require.main === module) {
+const migration = new ProductMigration();
+migration
+  .run()
+  .then(() => {
+    console.log("🎉 Product migration completed!");
+    process.exit(0);
+  })
+  .catch((error) => {
+    console.error("💥 Migration failed:", error);
+    process.exit(1);
+  });
+// }
 
 export default ProductMigration;
